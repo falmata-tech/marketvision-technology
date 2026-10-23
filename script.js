@@ -53,10 +53,12 @@
   const submit = document.getElementById('contact-submit');
   const submitLabel = document.getElementById('contact-submit-label');
   const status = document.getElementById('contact-form-status');
+  const availability = document.getElementById('contact-form-availability');
   const config = window.MARKETVISION_FORM;
   const accessKey = config && typeof config.accessKey === 'string' ? config.accessKey.trim() : '';
   const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-  if (!form || !panel || !submit || !submitLabel || !status || !uuidPattern.test(accessKey)) return;
+  const configured = uuidPattern.test(accessKey);
+  if (!form || !panel || !submit || !submitLabel || !status || !availability) return;
 
   const fields = {
     name: form.elements.namedItem('name'),
@@ -81,12 +83,16 @@
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
     if (sending) return;
+    if (!configured) {
+      showFormStatus('Online enquiries are temporarily unavailable. Please try again later.', 'error');
+      return;
+    }
     ['name', 'business', 'email', 'message'].forEach(function (name) {
       fields[name].value = fields[name].value.trim();
     });
     if (!form.reportValidity()) return;
     if (fields.botcheck.checked) {
-      showFormStatus('Your enquiry could not be sent. Please contact us using the email address shown here.', 'error');
+      showFormStatus('Your enquiry could not be sent. Please refresh the page and try again.', 'error');
       return;
     }
 
@@ -122,15 +128,15 @@
       });
       const result = await response.json();
       if (!response.ok || !result || result.success !== true) {
-        showFormStatus('Your enquiry was not submitted. Please try again or contact us by email.', 'error');
+        showFormStatus('Your enquiry was not submitted. Your details are still here. Please try again.', 'error');
         return;
       }
       form.reset();
       showFormStatus('Your enquiry has been submitted. Thank you for contacting MarketVision.', 'success');
     } catch (error) {
       const message = error && error.name === 'AbortError'
-        ? 'We could not confirm whether your enquiry was received before the request timed out. Your details are still here. Please try again or contact us by email.'
-        : 'We could not confirm that your enquiry was submitted. Your details are still here. Please try again or contact us by email.';
+        ? 'We could not confirm whether your enquiry was received before the request timed out. Your details are still here. Please try again later.'
+        : 'We could not confirm that your enquiry was submitted. Your details are still here. Please try again.';
       showFormStatus(message, 'error');
     } finally {
       window.clearTimeout(timeout);
@@ -141,8 +147,6 @@
     }
   });
 
-  submit.disabled = false;
-  panel.hidden = false;
-  const footerTop = panel.closest('.footer-top');
-  if (footerTop) footerTop.classList.add('has-contact-form');
+  submit.disabled = !configured;
+  availability.hidden = configured;
 }());
