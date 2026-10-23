@@ -1,5 +1,5 @@
-// Use a new public Web3Forms access key verified for marketvision.tech@gmail.com.
-// The form remains visible, but sending stays disabled until a valid key is supplied.
+// Public Web3Forms form access key supplied for marketvision.tech@gmail.com.
+// This key is intended for the browser; it is not a secret account API token.
 window.MARKETVISION_FORM = {
-  accessKey: ''
+  accessKey: 'de35b936-c833-4c1b-b0c3-86cb101f2ef7'
 };

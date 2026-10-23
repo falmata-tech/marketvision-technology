@@ -17,9 +17,9 @@ No package installation or build step is required. GitHub Pages publishes `main`
 
 The form uses [Web3Forms](https://web3forms.com/) and must use a form access key verified for **marketvision.tech@gmail.com**. Its key determines the recipient; the visitor's email is used as the reply address.
 
-Email delivery is not activated yet. `form-config.js` deliberately contains an empty `accessKey`. The complete form stays visible with an availability notice, and sending remains disabled until the receiving email has a valid form key. The site does not open an email application.
+`form-config.js` contains the public form access key supplied for MarketVision. Visitors submit enquiries directly on the page; the site does not open an email application. If the key is removed or malformed, sending is disabled and an availability notice is shown.
 
-To activate the form:
+To change the receiving form or replace its key:
 
 1. Create or select a Web3Forms form that sends to `marketvision.tech@gmail.com`, completing the service's email verification.
 2. Paste that form's **public access key** into `accessKey` in `form-config.js`. Do not use a secret account API token or a key belonging to another recipient.
