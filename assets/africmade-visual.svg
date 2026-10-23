@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650" fill="none" role="img" aria-labelledby="africmade-title africmade-desc">
+  <title id="africmade-title">AfricMade business showroom illustration</title>
+  <desc id="africmade-desc">An editorial illustration of a business showroom, with three geometric objects arranged as collections and a direct enquiry panel. It is a conceptual illustration, not a product screenshot.</desc>
+  <rect width="1000" height="650" fill="#F4F2EC"/>
+  <rect x="56" y="42" width="888" height="566" rx="20" fill="#FFFFFF" stroke="#DADDD8" stroke-width="2"/>
+
+  <!-- Showroom identity. -->
+  <rect x="92" y="78" width="48" height="48" rx="10" fill="#2557D6"/>
+  <path d="M105 113V99H127V113M109 113V106H123V113M103 99L107 91H125L129 99H103Z" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="158" y="112" fill="#252A2D" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="600" letter-spacing="-.5">Business showroom</text>
+  <path d="M92 154H908" stroke="#E4E6E1" stroke-width="2"/>
+
+  <!-- Collections are represented by abstract objects, without invented products. -->
+  <text x="92" y="200" fill="#252A2D" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" letter-spacing="-.25">Collections</text>
+  <rect x="92" y="224" width="260" height="208" rx="12" fill="#F3F2ED"/>
+  <rect x="370" y="224" width="260" height="208" rx="12" fill="#EEF2FA"/>
+  <rect x="648" y="224" width="260" height="208" rx="12" fill="#F3F2ED"/>
+
+  <!-- A faceted block. -->
+  <path d="M158 301L222 267L286 301L222 335L158 301Z" fill="#FDFDF9" stroke="#9BA49D" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M158 301L222 335V396L158 362V301Z" fill="#E2E5DF" stroke="#9BA49D" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M222 335L286 301V362L222 396V335Z" fill="#C7CEC5" stroke="#9BA49D" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Two solid cylindrical forms. -->
+  <path d="M455 286V374C455 385 474 394 497 394C520 394 539 385 539 374V286H455Z" fill="#2557D6"/>
+  <ellipse cx="497" cy="286" rx="42" ry="18" fill="#5C7FE1"/>
+  <path d="M455 374C455 385 474 394 497 394C520 394 539 385 539 374" stroke="#1E47AE" stroke-width="2"/>
+  <path d="M520 344V390C520 398 534 404 551 404C568 404 582 398 582 390V344H520Z" fill="#C5CEDC"/>
+  <ellipse cx="551" cy="344" rx="31" ry="14" fill="#F9FBFF" stroke="#AAB5C6" stroke-width="2"/>
+  <path d="M520 344V390C520 398 534 404 551 404C568 404 582 398 582 390V344" stroke="#AAB5C6" stroke-width="2"/>
+
+  <!-- An architectural arch form. -->
+  <path d="M718 390V317C718 286 741 262 770 262C799 262 822 286 822 317V390H718Z" fill="#252A2D"/>
+  <path d="M742 390V319C742 301 754 287 770 287C786 287 798 301 798 319V390H742Z" fill="#F3F2ED"/>
+  <path d="M822 317V390L843 378V306C843 278 822 255 795 252L770 262C799 262 822 286 822 317Z" fill="#737D7B"/>
+  <path d="M718 390H822L843 378" stroke="#252A2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- A clear route from the showroom to a conversation. -->
+  <path d="M92 466H908" stroke="#E4E6E1" stroke-width="2"/>
+  <path d="M98 500H124C129 500 132 503 132 508V521C132 526 129 529 124 529H111L100 537V529H98C93 529 90 526 90 521V508C90 503 93 500 98 500Z" stroke="#252A2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M100 511H122M100 518H116" stroke="#252A2D" stroke-width="2" stroke-linecap="round"/>
+  <text x="154" y="527" fill="#252A2D" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" letter-spacing="-.4">Direct enquiry</text>
+  <rect x="842" y="488" width="66" height="66" rx="12" fill="#2557D6"/>
+  <path d="M862 521H888M878 511L888 521L878 531" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
