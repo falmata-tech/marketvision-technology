@@ -1,8 +1,12 @@
 # MarketVision Technology
 
-The company website for MarketVision Technology, an East African technology company building connections and visibility across markets. The page leads with its vision and mission, then introduces AfricMade and Loadgistic as standalone platforms it owns and develops. Consulting and software development remain part of its expertise in e-commerce, logistics and IoT telematics.
+The company website for MarketVision Technology, an East African technology company building connections and visibility across markets. The page leads with its vision and mission, then presents AfricMade and Loadgistic in a dedicated platforms section. Consulting and software development remain part of its expertise in e-commerce, logistics and IoT telematics.
 
 AfricMade is live at `https://africmade.com/`; Loadgistic is live at `https://loadgistic.com/`. The existing design, colours, illustrations and logos are retained. The contact form accepts general, platform, partnership and consulting enquiries.
+
+## Copy direction
+
+Keep the hero focused on MarketVision’s purpose: connection, market access and visibility. Platform names and descriptions belong only in the platforms section. The heading, logos and concrete descriptions establish the relationship; do not add ownership explanations or internal positioning notes to the public copy. Keep the tone direct and assured, with consulting and development presented in the expertise section.
 
 ## Website files
 
