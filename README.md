@@ -1,8 +1,6 @@
 # MarketVision Technology
 
-The company website for MarketVision Technology, the company behind AfricMade and Loadgistic. It presents MarketVision’s vision for connected African markets, its mission and its own technology brands. Commerce, logistics and IoT telematics are areas of focus.
-
-The page follows four sections: introduction, vision and mission, brands, and general contact. AfricMade and Loadgistic are presented as distinct MarketVision platforms, each with its own audience and website. AfricMade continues to link to MirtPage while the brand transition is in progress.
+The company website for MarketVision Technology: technology consulting and custom software development for e-commerce, logistics and IoT telematics in East Africa. AfricMade and Loadgistic appear as independent platforms developed by MarketVision, demonstrating its work in these fields.
 
 ## Website files
 
@@ -19,7 +17,7 @@ No package installation or build step is required. GitHub Pages publishes `main`
 
 The form uses [Web3Forms](https://web3forms.com/) and must use a form access key verified for **marketvision.tech@gmail.com**. Its key determines the recipient; the visitor's email is used as the reply address.
 
-`form-config.js` contains the public form access key supplied for MarketVision. Visitors submit general messages directly on the page; the site does not open an email application. The form collects name, email and message, with optional organisation and subject fields. The notification subject is “MarketVision Technology — website enquiry”, and the visitor’s subject is included as `topic` in the payload. If the key is removed or malformed, sending is disabled and an availability notice is shown.
+`form-config.js` contains the public form access key supplied for MarketVision. Visitors submit enquiries directly on the page; the site does not open an email application. If the key is removed or malformed, sending is disabled and an availability notice is shown.
 
 To change the receiving form or replace its key:
 
