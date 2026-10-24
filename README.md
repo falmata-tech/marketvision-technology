@@ -1,6 +1,8 @@
 # MarketVision Technology
 
-The company website for MarketVision Technology: technology consulting and custom software development for e-commerce, logistics and IoT telematics in East Africa. AfricMade and Loadgistic appear as independent platforms developed by MarketVision, demonstrating its work in these fields.
+The company website for MarketVision Technology, an East African technology company building connections and visibility across markets. The page leads with its vision and mission, then introduces AfricMade and Loadgistic as standalone platforms it owns and develops. Consulting and software development remain part of its expertise in e-commerce, logistics and IoT telematics.
+
+AfricMade is live at `https://africmade.com/`; Loadgistic is live at `https://loadgistic.com/`. The existing design, colours, illustrations and logos are retained. The contact form accepts general, platform, partnership and consulting enquiries.
 
 ## Website files
 
