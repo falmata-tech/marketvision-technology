@@ -31,20 +31,6 @@
       if (event.matches) closeMenu(false);
     });
   }
-  document.querySelectorAll('[data-capability]').forEach(function (link) {
-    link.addEventListener('click', function () {
-      const target = document.getElementById(link.dataset.capability);
-      if (target instanceof HTMLDetailsElement) target.open = true;
-    });
-  });
-  function openHashCapability() {
-    const hash = window.location.hash.slice(1);
-    if (!hash.startsWith('capability-')) return;
-    const target = document.getElementById(hash);
-    if (target instanceof HTMLDetailsElement) target.open = true;
-  }
-  window.addEventListener('hashchange', openHashCapability);
-  openHashCapability();
   const year = document.getElementById('copyright-year');
   if (year) year.textContent = String(new Date().getFullYear());
 
@@ -62,9 +48,9 @@
 
   const fields = {
     name: form.elements.namedItem('name'),
-    business: form.elements.namedItem('business'),
+    organization: form.elements.namedItem('organization'),
     email: form.elements.namedItem('email'),
-    service: form.elements.namedItem('service'),
+    topic: form.elements.namedItem('topic'),
     message: form.elements.namedItem('message'),
     botcheck: form.elements.namedItem('botcheck')
   };
@@ -84,27 +70,27 @@
     event.preventDefault();
     if (sending) return;
     if (!configured) {
-      showFormStatus('Online enquiries are temporarily unavailable. Please try again later.', 'error');
+      showFormStatus('The contact form is temporarily unavailable. Please try again later.', 'error');
       return;
     }
-    ['name', 'business', 'email', 'message'].forEach(function (name) {
+    ['name', 'organization', 'email', 'topic', 'message'].forEach(function (name) {
       fields[name].value = fields[name].value.trim();
     });
     if (!form.reportValidity()) return;
     if (fields.botcheck.checked) {
-      showFormStatus('Your enquiry could not be sent. Please refresh the page and try again.', 'error');
+      showFormStatus('Your message could not be sent. Please refresh the page and try again.', 'error');
       return;
     }
 
     const payload = {
       access_key: accessKey,
-      subject: 'MarketVision Technology — project enquiry',
+      subject: 'MarketVision Technology — website enquiry',
       from_name: 'MarketVision Technology',
       name: fields.name.value,
-      business: fields.business.value,
+      organization: fields.organization.value,
       email: fields.email.value,
       replyto: fields.email.value,
-      service: fields.service.value,
+      topic: fields.topic.value,
       message: fields.message.value,
       botcheck: false
     };
@@ -115,7 +101,7 @@
     controlStates.forEach(function (item) { item.control.disabled = true; });
     form.setAttribute('aria-busy', 'true');
     submitLabel.textContent = 'Sending…';
-    showFormStatus('Sending your enquiry…', 'sending');
+    showFormStatus('Sending your message…', 'sending');
 
     const controller = new AbortController();
     const timeout = window.setTimeout(function () { controller.abort(); }, 20000);
@@ -128,21 +114,21 @@
       });
       const result = await response.json();
       if (!response.ok || !result || result.success !== true) {
-        showFormStatus('Your enquiry was not submitted. Your details are still here. Please try again.', 'error');
+        showFormStatus('Your message was not submitted. Your details are still here. Please try again.', 'error');
         return;
       }
       form.reset();
-      showFormStatus('Your enquiry has been submitted. Thank you for contacting MarketVision.', 'success');
+      showFormStatus('Thank you. Your message has been sent.', 'success');
     } catch (error) {
       const message = error && error.name === 'AbortError'
-        ? 'We could not confirm whether your enquiry was received before the request timed out. Your details are still here. Please try again later.'
-        : 'We could not confirm that your enquiry was submitted. Your details are still here. Please try again.';
+        ? 'We could not confirm whether your message was received before the request timed out. Your details are still here. Please try again later.'
+        : 'We could not confirm that your message was submitted. Your details are still here. Please try again.';
       showFormStatus(message, 'error');
     } finally {
       window.clearTimeout(timeout);
       controlStates.forEach(function (item) { item.control.disabled = item.disabled; });
       form.setAttribute('aria-busy', 'false');
-      submitLabel.textContent = 'Send enquiry';
+      submitLabel.textContent = 'Send message';
       sending = false;
     }
   });
