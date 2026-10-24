@@ -30,6 +30,8 @@ Submissions stay on the page. The form clears only after a successful API respon
 
 ## Maintenance
 
-The page uses relative asset paths for GitHub Pages project hosting. If the site moves to its own domain, update the canonical and Open Graph URLs in `index.html`, and the base URL in `404.html`.
+The custom domain is `marketvisiontech.com`, declared in the root `CNAME` file. The canonical and Open Graph URLs in `index.html` and the base URL in `404.html` use `https://marketvisiontech.com/`. Homepage assets remain relative.
+
+GoDaddy DNS must point the apex (`@`) to the four GitHub Pages addresses: `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`. The `www` CNAME must point directly to `falmata-tech.github.io`. GitHub Pages serves the apex as the primary address and redirects `www` to it when both records are configured. Enable Enforce HTTPS once the custom-domain certificate is ready.
 
 The Inter font license is included in `assets/INTER-LICENSE.txt`.
