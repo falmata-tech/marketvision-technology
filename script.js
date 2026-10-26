@@ -1,11 +1,13 @@
 (function () {
   'use strict';
+  const locale = window.SiteLanguage;
+  const text = locale.text;
   const toggle = document.getElementById('menu-toggle');
   const navigation = document.getElementById('primary-nav');
   function closeMenu(returnFocus) {
     if (!toggle || !navigation) return;
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open menu');
+    toggle.setAttribute('aria-label', text('nav.open'));
     navigation.classList.remove('is-open');
     document.body.classList.remove('menu-open');
     if (returnFocus) toggle.focus();
@@ -14,7 +16,7 @@
     toggle.addEventListener('click', function () {
       const open = toggle.getAttribute('aria-expanded') !== 'true';
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      toggle.setAttribute('aria-label', open ? text('nav.close') : text('nav.open'));
       navigation.classList.toggle('is-open', open);
       document.body.classList.toggle('menu-open', open);
     });
@@ -27,7 +29,7 @@
     document.addEventListener('click', function (event) {
       if (!navigation.contains(event.target) && !toggle.contains(event.target)) closeMenu(false);
     });
-    window.matchMedia('(min-width: 601px)').addEventListener('change', function (event) {
+    window.matchMedia('(min-width: 1181px)').addEventListener('change', function (event) {
       if (event.matches) closeMenu(false);
     });
   }
@@ -69,6 +71,7 @@
     botcheck: form.elements.namedItem('botcheck')
   };
   if (Object.values(fields).some(function (field) { return !field; })) return;
+  locale.bindValidation(form);
   let sending = false;
 
   function showFormStatus(message, state) {
@@ -84,7 +87,7 @@
     event.preventDefault();
     if (sending) return;
     if (!configured) {
-      showFormStatus('Online enquiries are temporarily unavailable. Please try again later.', 'error');
+      showFormStatus(text('form.unavailable'), 'error');
       return;
     }
     ['name', 'business', 'email', 'message'].forEach(function (name) {
@@ -92,7 +95,7 @@
     });
     if (!form.reportValidity()) return;
     if (fields.botcheck.checked) {
-      showFormStatus('Your message could not be sent. Please refresh the page and try again.', 'error');
+      showFormStatus(text('form.refreshError'), 'error');
       return;
     }
 
@@ -106,6 +109,7 @@
       replyto: fields.email.value,
       topic: fields.topic.value,
       message: fields.message.value,
+      language: locale.language,
       botcheck: false
     };
     const controlStates = Array.from(form.elements).map(function (control) {
@@ -114,8 +118,8 @@
     sending = true;
     controlStates.forEach(function (item) { item.control.disabled = true; });
     form.setAttribute('aria-busy', 'true');
-    submitLabel.textContent = 'Sending…';
-    showFormStatus('Sending your message…', 'sending');
+    submitLabel.textContent = text('form.sendingButton');
+    showFormStatus(text('form.sending'), 'sending');
 
     const controller = new AbortController();
     const timeout = window.setTimeout(function () { controller.abort(); }, 20000);
@@ -128,21 +132,21 @@
       });
       const result = await response.json();
       if (!response.ok || !result || result.success !== true) {
-        showFormStatus('Your message was not submitted. Your details are still here. Please try again.', 'error');
+        showFormStatus(text('form.rejected'), 'error');
         return;
       }
       form.reset();
-      showFormStatus('Thank you. Your message has been sent.', 'success');
+      showFormStatus(text('form.success'), 'success');
     } catch (error) {
       const message = error && error.name === 'AbortError'
-        ? 'We could not confirm whether your message was received before the request timed out. Your details are still here. Please try again later.'
-        : 'We could not confirm that your message was submitted. Your details are still here. Please try again.';
+        ? text('form.timeout')
+        : text('form.error');
       showFormStatus(message, 'error');
     } finally {
       window.clearTimeout(timeout);
       controlStates.forEach(function (item) { item.control.disabled = item.disabled; });
       form.setAttribute('aria-busy', 'false');
-      submitLabel.textContent = 'Send message';
+      submitLabel.textContent = text('form.send');
       sending = false;
     }
   });

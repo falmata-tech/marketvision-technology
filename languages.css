@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "Noto Sans Ethiopic";
+  src: url("assets/noto-sans-ethiopic.woff") format("woff");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+/* The language chooser remains available independently of the mobile menu. */
+.language-switcher { position: relative; flex: 0 0 auto; order: 3; z-index: 25; color: var(--language-ink); font-family: Inter, "Noto Sans Ethiopic", Arial, sans-serif; }
+.language-switcher summary { min-height: 44px; padding: 10px 12px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--language-line); border-radius: 4px; cursor: pointer; list-style: none; background: var(--language-bg); font-size: 12px; font-weight: 500; line-height: 1.5; white-space: nowrap; user-select: none; }
+.language-switcher summary::-webkit-details-marker { display: none; }
+.language-switcher summary::marker { content: ""; }
+.language-switcher summary:hover, .language-switcher[open] summary { border-color: var(--language-ink); }
+.language-switcher summary:focus-visible, .language-options a:focus-visible { outline: 2px solid var(--language-accent); outline-offset: 3px; }
+.language-switcher svg { flex-shrink: 0; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.language-globe { width: 16px; height: 16px; }
+.language-chevron { width: 13px; height: 13px; transition: transform .16s; }
+.language-switcher[open] .language-chevron { transform: rotate(180deg); }
+.language-options { position: absolute; right: 0; top: calc(100% + 10px); min-width: 184px; padding: 6px; background: var(--language-bg); border: 1px solid var(--language-line); border-radius: 6px; box-shadow: 0 10px 30px rgba(20,35,50,.1); }
+.language-options a { min-height: 46px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px 12px; border-radius: 3px; font-size: 14px; line-height: 1.5; white-space: nowrap; }
+.language-options a:hover, .language-options a[aria-current="page"] { background: var(--language-hover); }
+.language-options a[aria-current="page"] { font-weight: 600; }
+.language-options a svg { width: 17px; height: 17px; visibility: hidden; }
+.language-options a[aria-current="page"] svg { visibility: visible; }
+.language-switcher [lang="am"] { font-family: "Noto Sans Ethiopic", Inter, sans-serif; }
+html[lang="am"] body, html[lang="am"] input, html[lang="am"] select, html[lang="am"] textarea, html[lang="am"] button { font-family: Inter, "Noto Sans Ethiopic", sans-serif; }
+html[lang="am"] :is(h1,h2,h3,p,li,dt,dd,label,a,button,summary,.section-label,.eyebrow,.footer-label,.approach-label,.platform-art-top,.platform-status,.illustration-note,.sector-inner span,.sector-inner small) { letter-spacing: 0; }
+html[lang="am"] :is(h1,h2) { line-height: 1.3; }
+html[lang="am"] h3 { line-height: 1.5; }
+html[lang="am"] p { line-height: 1.9; }
+html:not([lang="en"]) :is(.hero-copy,.network-copy,.commerce-copy,.vision-content,.expertise-intro,.company-copy,.contact-copy) { min-width: 0; }
+html:not([lang="en"]) :is(h1,h2,h3) { overflow-wrap: break-word; }
+html:not([lang="en"]) .hero h1 { white-space: normal; }
+html:not([lang="en"]) .text-link { white-space: normal; }
+html:not([lang="en"]) .hero-actions { flex-wrap: wrap; }
+@media (max-width: 1180px) {
+  .header-inner { gap: 14px; justify-content: flex-start; }
+  .header-inner > .brand { margin-right: auto; }
+  .language-switcher { order: 2; }
+}
+@media (max-width: 600px) {
+  .header-inner { gap: 8px; }
+  .language-switcher summary { padding: 9px 8px; font-size: 11px; gap: 5px; }
+  .language-globe { display: none; }
+  .language-options { right: -52px; top: calc(100% + 12px); }
+  .language-options a { min-height: 48px; }
+}
+@media print { .language-switcher { display: none; } }
+:root { --language-ink: var(--ink); --language-line: var(--line); --language-bg: var(--canvas); --language-accent: var(--blue); --language-hover: #e9eaf0; }
+.header-inner { gap: 24px; }
+.header-inner > .brand { margin-right: auto; }
+.primary-nav { gap: 24px; }
+.platform-art .platform-illustration { width: 100%; height: auto; aspect-ratio: 1000/650; display: block; }
+.platform-illustration text { font-family: inherit; }
+html[lang="am"] .hero h1 { font-size: clamp(50px,5.4vw,78px); letter-spacing: 0; line-height: 1.25; }
+html[lang="am"] h2 { font-size: clamp(34px,3.1vw,46px); }
+html[lang="om"] .hero h1 { font-size: clamp(51px,5.3vw,78px); letter-spacing: -.04em; line-height: 1.1; }
+html:not([lang="en"]) .platform-title { flex-direction: column; align-items: flex-start; }
+html:not([lang="en"]) .platform-status { white-space: normal; font-size: 11px; }
+html:not([lang="en"]) .platform-content > p { font-size: 14px; }
+html:not([lang="en"]) .platform-art-top { gap: 12px; line-height: 1.5; }
+html:not([lang="en"]) .sector-inner > a > span:not(.sector-number) { min-width: 0; }
+html:not([lang="en"]) .sector-inner small { font-size: 11px; line-height: 1.5; }
+html:not([lang="en"]) .feature-list li { font-size: 10px; line-height: 1.6; }
+html[lang="am"] .contact-field :is(input,select,textarea) { font-family: Inter,"Noto Sans Ethiopic",sans-serif; }
+@media (max-width: 1180px) {
+  .site-header { height: 84px; }
+  .header-inner { gap: 14px; }
+  .menu-toggle { order: 4; flex: 0 0 44px; display: flex; flex-direction: column; justify-content: center; gap: 6px; width: 44px; height: 44px; background: transparent; border: 1px solid var(--line); border-radius: 4px; padding: 11px; margin: 0; cursor: pointer; z-index: 22; }
+  .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--ink); transition: transform .2s; }
+  .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.75px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.75px) rotate(-45deg); }
+  .primary-nav { display: none; position: absolute; inset: 100% 0 auto; padding: 22px var(--gutter) 30px; background: var(--canvas); border-bottom: 1px solid var(--line); box-shadow: 0 20px 30px rgba(0,0,0,.05); flex-direction: column; align-items: stretch; gap: 6px; max-height: calc(100dvh - 84px); overflow-y: auto; }
+  .primary-nav.is-open { display: flex; }
+  .primary-nav > a:not(.nav-cta) { font-size: 18px; letter-spacing: -.02em; padding: 12px 0; }
+  .primary-nav .nav-cta { display: flex; font-size: 13px; margin-top: 12px; }
+}
+@media (max-width: 800px) {
+  html[lang="am"] .hero h1 { font-size: 53px; }
+  html[lang="om"] .hero h1 { font-size: 53px; }
+  html:not([lang="en"]) .sector-inner > a { padding-inline-end: 14px; gap: 10px; }
+  html:not([lang="en"]) .sector-inner > a > span:not(.sector-number) { font-size: 15px; }
+  html:not([lang="en"]) .vision-copy p { font-size: 14px; }
+  html[lang="am"] :is(h2,.expertise-intro h2,.company h2) { font-size: 36px; }
+}
+@media (max-width: 600px) {
+  .site-header { position: sticky; top: 0; height: 76px; }
+  .header-inner { gap: 8px; }
+  .header-inner > .brand { gap: 7px; min-width: 0; }
+  .header-inner .brand img { width: 28px; height: 28px; }
+  .header-inner .brand-type { font-size: 18px; letter-spacing: -.8px; }
+  .header-inner .brand-type > span { font-size: 6px; letter-spacing: 2px; margin-top: 4px; }
+  .menu-toggle { flex-basis: 44px; width: 44px; padding: 11px; }
+  .primary-nav { max-height: calc(100dvh - 76px); }
+  html { scroll-padding-top: 95px; }
+  html[lang="am"] .hero h1 { font-size: clamp(39px,10.5vw,58px); line-height: 1.3; }
+  html[lang="om"] .hero h1 { font-size: clamp(40px,11vw,60px); line-height: 1.15; }
+  html:not([lang="en"]) .hero-description { font-size: 15px; }
+  html:not([lang="en"]) .hero-actions { gap: 15px 20px; }
+  html:not([lang="en"]) .hero-actions :is(.button,.text-link) { font-size: 12px; }
+  html:not([lang="en"]) .sector-inner > a > span:not(.sector-number) { display: block; }
+  html:not([lang="en"]) .sector-inner small { margin-top: 6px; }
+  html:not([lang="en"]) .platform-content > p { font-size: 14px; }
+  html:not([lang="en"]) .capability-body p, html:not([lang="en"]) .approach-row p { font-size: 14px; }
+  html[lang="am"] :is(h2,.expertise-intro h2,.company h2) { font-size: 32px; }
+  html:not([lang="en"]) .contact-copy > p { font-size: 14px; }
+}
+@media (max-width: 360px) {
+  .header-inner { width: calc(100% - 32px); }
+  .header-inner .brand img { width: 24px; height: 24px; }
+  .header-inner .brand-type { font-size: 15px; letter-spacing: -.7px; }
+  .header-inner .brand-type > span { font-size: 5.5px; letter-spacing: 1.7px; }
+  .header-inner > .brand { gap: 5px; }
+  .header-inner { gap: 6px; }
+}
+
+html[lang="am"] .primary-nav > a:not(.button):not(.nav-cta) { font-size: 14px; }
+html[lang="am"] :is(.button,.text-link,.external-link,.nav-cta) { font-size: 13px; }
+html[lang="am"] :is(.eyebrow,.section-label,.purpose-statement h3,.platform-art-top,.illustration-note,.approach-label,.footer-label) { font-size: 11px; }
+html[lang="am"] .hero-description { font-size: 16px; }
+.site-header { position: sticky; top: 0; }
+
+@media (max-width: 360px) { .header-inner { width: calc(100% - 24px); gap: 4px; } }

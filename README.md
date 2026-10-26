@@ -41,3 +41,20 @@ The custom domain is `marketvisiontech.com`, declared in the root `CNAME` file. 
 GoDaddy DNS must point the apex (`@`) to the four GitHub Pages addresses: `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`. The `www` CNAME must point directly to `falmata-tech.github.io`. GitHub Pages serves the apex as the primary address and redirects `www` to it when both records are configured. Enable Enforce HTTPS once the custom-domain certificate is ready.
 
 The Inter font license is included in `assets/INTER-LICENSE.txt`.
+
+
+## English, Amharic and Afaan Oromoo
+
+The root page is English; `/am/` and `/om/` are complete static Amharic and Afaan Oromoo pages. Each has its own page language, title, description, canonical URL and reciprocal language links. `sitemap.xml` includes all three versions. The 404 page uses the requested language when the missing URL contains `/am/` or `/om/`.
+
+The language chooser is visible outside the mobile navigation and uses native disclosure and links. It has named language choices, current-language indication, keyboard support and 44px or larger controls. Switching language keeps the section hash. An unfinished enquiry is transferred once through same-origin session storage and removed when the destination reads it; it expires after two minutes and is never placed in the URL. There is no automatic redirect based on browser language.
+
+### Editing and rebuilding
+
+- `site-template.html` contains the shared page structure and translation bindings. `error-template.html` contains the error-page structure.
+- `locales/en.json`, `locales/am.json` and `locales/om.json` contain the copy. Keep their keys identical. Headings may use `<br>` and `<span>` for intentional line breaks and colour accents.
+- `index.html`, `am/index.html`, `om/index.html`, `404.html` and `sitemap.xml` are generated. Update the templates/catalogs and rebuild rather than editing those output files directly.
+- Install the build-only Python dependency with `python -m pip install -r scripts/requirements.txt`, then run `python scripts/build-locales.py`. The public site itself remains plain static HTML, CSS and JavaScript; it has no Python or translation-service runtime.
+- `languages.js` provides translated form validation and the language-control interactions. Existing form recipients and Web3Forms access keys are unchanged. Submission payloads include the selected language.
+
+Amharic uses self-hosted Noto Sans Ethiopic, with normal width and variable weight, alongside Inter for Latin brand lettering. The font comes from the [official Google Fonts source](https://github.com/google/fonts/tree/main/ofl/notosansethiopic); its license is included in `assets/OFL-NotoSansEthiopic.txt`. The font is loaded locally, including in inline illustration labels where present. Translation keeps the existing business claims and brand names, with phrase order and line breaks adapted to each language.
