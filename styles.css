@@ -175,3 +175,31 @@ html{scroll-padding-top:30px}.site-header{height:84px}.brand-type{font-size:23px
 @media(max-width:900px){.footer-top.has-contact-form{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"copy back" "form form";gap:36px 16px}.has-contact-form>.back-top{align-self:start}.has-contact-form .contact-copy h2{padding-right:0}.contact-form-panel{max-width:680px}}
 @media(max-width:600px){.contact-form-grid{grid-template-columns:minmax(0,1fr);gap:20px}.contact-field{font-size:12px}.contact-field input,.contact-field select,.contact-field textarea{font-size:16px}.contact-submit{font-size:12px;min-height:51px;padding:16px 19px}.contact-form-status{font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* A service business belongs in the portfolio alongside the software platforms. */
+.portfolio-business { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); margin-top: 26px; border: 1px solid #dce1e5; background: #fff; }
+.business-art { min-width: 0; position: relative; display: grid; align-content: center; background: #f1f5f8; }
+.business-art .platform-art-top { position: absolute; inset: 0 0 auto; }
+.business-art > img { display: block; width: 100%; height: auto; max-height: 430px; object-fit: contain; padding: 42px 18px 20px; }
+.business-content { min-width: 0; padding: 36px; }
+.business-content > p { max-width: 520px; font-size: 14px; line-height: 1.8; }
+.business-content > p.platform-subtitle { font-size: 19px; line-height: 1.5; }
+.business-content > p.business-connection { margin-top: 15px; }
+.business-content .feature-list { margin-block: 23px; }
+@media (max-width: 800px) {
+  .portfolio-business { grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); margin-top: 17px; }
+  .business-content { padding: 26px 23px; }
+  .business-content > p { font-size: 13px; }
+  .business-content > p.platform-subtitle { font-size: 17px; }
+}
+@media (max-width: 600px) {
+  .portfolio-business { display: block; margin-top: 26px; }
+  .business-art > img { padding: 42px 20px 15px; max-height: 350px; }
+  .business-content > p { font-size: 14px; }
+  .business-content > p.platform-subtitle { font-size: 17px; }
+}
+
+.platform-art-top > span:last-child { flex-shrink: 0; white-space: nowrap; }
+.footer-bottom > div { min-width: 0; }
+.footer-bottom nav { flex-wrap: wrap; }
+@media (max-width: 600px) { .footer-bottom { grid-template-columns: minmax(0,1fr); } }

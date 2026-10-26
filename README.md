@@ -1,12 +1,12 @@
 # MarketVision Technology
 
-The company website for MarketVision Technology, an East African technology company building connections and visibility across markets. The page leads with its vision and mission, then presents AfricMade and Loadgistic in a dedicated platforms section. Consulting and software development remain part of its expertise in e-commerce, logistics and IoT telematics.
+The company website for MarketVision Technology, an East African technology company building connections and visibility across markets. The page leads with its vision and mission, then presents AfricMade, Loadgistic and SharedTrucks in a dedicated portfolio section. AfricMade and Loadgistic are technology platforms; SharedTrucks is a logistics service business supported by the commerce and transport technology MarketVision builds. Consulting and software development remain part of its expertise in e-commerce, logistics and IoT telematics.
 
-AfricMade is live at `https://africmade.com/`; Loadgistic is live at `https://loadgistic.com/`. The existing design, colours, illustrations and logos are retained. The contact form accepts general, platform, partnership and consulting enquiries.
+AfricMade is live at `https://africmade.com/`; Loadgistic is live at `https://loadgistic.com/`. SharedTrucks is live at `https://sharedtrucks.com/`. The existing design, colours, illustrations and logos are retained; its portfolio card uses the approved SharedTrucks logo and freight illustration. The contact form accepts general, platform, partnership and consulting enquiries.
 
 ## Copy direction
 
-Keep the hero focused on MarketVision’s purpose: connection, market access and visibility. Platform names and descriptions belong only in the platforms section. The heading, logos and concrete descriptions establish the relationship; do not add ownership explanations or internal positioning notes to the public copy. Keep the tone direct and assured, with consulting and development presented in the expertise section.
+Keep the hero focused on MarketVision’s purpose: connection, market access and visibility. Business and platform names and descriptions belong only in the portfolio section. The heading, logos and concrete descriptions establish the relationship; do not add ownership explanations or internal positioning notes to the public copy. Keep the tone direct and assured, with consulting and development presented in the expertise section.
 
 ## Website files
 
@@ -43,17 +43,17 @@ GoDaddy DNS must point the apex (`@`) to the four GitHub Pages addresses: `185.1
 The Inter font license is included in `assets/INTER-LICENSE.txt`.
 
 
-## English, Amharic and Afaan Oromoo
+## English, Amharic, Afaan Oromoo and Somali
 
-The root page is English; `/am/` and `/om/` are complete static Amharic and Afaan Oromoo pages. Each has its own page language, title, description, canonical URL and reciprocal language links. `sitemap.xml` includes all three versions. The 404 page uses the requested language when the missing URL contains `/am/` or `/om/`.
+The root page is English; `/am/`, `/om/` and `/so/` are complete static Amharic, Afaan Oromoo and Somali pages. Each has its own page language, title, description, canonical URL and reciprocal language links. `sitemap.xml` includes all four versions. The 404 page uses the requested language when the missing URL contains `/am/`, `/om/` or `/so/`.
 
 The language chooser is visible outside the mobile navigation and uses native disclosure and links. It has named language choices, current-language indication, keyboard support and 44px or larger controls. Switching language keeps the section hash. An unfinished enquiry is transferred once through same-origin session storage and removed when the destination reads it; it expires after two minutes and is never placed in the URL. There is no automatic redirect based on browser language.
 
 ### Editing and rebuilding
 
 - `site-template.html` contains the shared page structure and translation bindings. `error-template.html` contains the error-page structure.
-- `locales/en.json`, `locales/am.json` and `locales/om.json` contain the copy. Keep their keys identical. Headings may use `<br>` and `<span>` for intentional line breaks and colour accents.
-- `index.html`, `am/index.html`, `om/index.html`, `404.html` and `sitemap.xml` are generated. Update the templates/catalogs and rebuild rather than editing those output files directly.
+- `locales/en.json`, `locales/am.json`, `locales/om.json` and `locales/so.json` contain the copy. Keep their keys identical. Headings may use `<br>` and `<span>` for intentional line breaks and colour accents.
+- `index.html`, `am/index.html`, `om/index.html`, `so/index.html`, `404.html` and `sitemap.xml` are generated. Update the templates/catalogs and rebuild rather than editing those output files directly.
 - Install the build-only Python dependency with `python -m pip install -r scripts/requirements.txt`, then run `python scripts/build-locales.py`. The public site itself remains plain static HTML, CSS and JavaScript; it has no Python or translation-service runtime.
 - `languages.js` provides translated form validation and the language-control interactions. Existing form recipients and Web3Forms access keys are unchanged. Submission payloads include the selected language.
 

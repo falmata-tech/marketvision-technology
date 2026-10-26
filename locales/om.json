@@ -57,7 +57,7 @@
   "copy.016": "KAAYYOO KEENYA",
   "copy.017": "Kaayyoon keenya gabaawwan Afrikaa walitti hidhuu dha. Dhaabbileen daldalaa salphaatti akka argaman, sochii hojii isaanii immoo ifatti akka hubatan gochuuf hojjenna.",
   "copy.018": "Waltajjiiwwan daldalaa, sirnoota loojistikii fi meeshaalee daataa konkolaataafi meeshaalee elektirooniksii gara odeeffannoo hojiif ooluutti jijjiiran hojjenna.",
-  "copy.019": "WALTAJJIIWWAN KEENYA",
+  "copy.019": "HOJIIWWAN KEENYA",
   "copy.020": "DHAABBILEE DALDALAA BARBAADUU",
   "access.004": "Fakkii fuula agarsiisa daldalaa, tuuta oomishaalee fi gaaffii kallattiin dhiyeessuu agarsiisu",
   "copy.021": "Fakkii yaada agarsiisu: fuula agarsiisa daldalaa, bocawwan ji’oomeetirii sadii tuuta oomishaalee fakkeessanii fi kutaa gaaffii kallattiin itti dhiyeessan. Kun fakkii ibsaa dha; suuraa waltajjii dhugaa irraa fudhatame miti.",
@@ -118,5 +118,16 @@
   "access.009": "Tarree jala fuulaa",
   "error.title": "Fuulli kun hin argamne.",
   "error.description": "Fuula isin barbaaddan argachuu hin dandeenye.",
-  "error.home": "Gara MarketVision deebi’aa"
+  "error.home": "Gara MarketVision deebi’aa",
+  "portfolio.services": "TAJAAJILA LOOJISTIKII",
+  "portfolio.sharedtrucksTitle": "Fe’umsa waliin geejjibuun bu’a qabeessa dha.",
+  "portfolio.sharedtrucksBody": "SharedTrucks fe’umsa waliin geejjibamuuf mijatu karaa tokko irratti walitti fida. Kanaaf, dhaabbileen Itoophiyaa fi Baha Afrikaa keessatti baasii geejjibaa waliin qooddatu; iddoon konkolaataa keessa jirus caalaatti hojii irra oola.",
+  "portfolio.sharedtrucksConnection": "Teeknooloojiin daldalaafi geejjibaa keenya garee fe’umsa tokkoon tokkoo fuudhuu irraa hanga geessuutti qindeessu ni deeggara.",
+  "portfolio.sharedtrucksLink": "SharedTrucks daawwadhaa",
+  "portfolio.sharedtrucksAlt": "Fe’umsa adda addaa konkolaataa fe’umsaa tokko keessatti iddoo qooddatu",
+  "portfolio.sharedtrucksFeatures": "Tajaajiloota SharedTrucks",
+  "portfolio.sharedLoads": "Geejjiba fe’umsaa waloo",
+  "portfolio.shipmentCoordination": "Geejjiba fe’umsaa qindeessuu",
+  "portfolio.businessFreight": "Fe’umsa daldalaa",
+  "footer.rights": "Mirgi hundi seeraan eegama."
 }

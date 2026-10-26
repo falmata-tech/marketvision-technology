@@ -57,7 +57,7 @@
   "copy.016": "ዓላማችን",
   "copy.017": "ዓላማችን የአፍሪካን ገበያዎች ማገናኘት ነው። የንግድ ድርጅቶች በቀላሉ እንዲገኙ፣ የራሳቸውንም ሥራ በተሻለ መረጃ በግልጽ እንዲከታተሉ እንሠራለን።",
   "copy.018": "የንግድ መድረኮችንና የሎጂስቲክስ ሥርዓቶችን እንገነባለን። ከተሽከርካሪዎችና ከመሣሪያዎች የሚገኝ መረጃ ለሥራ አመራር እንዲጠቅም የሚያደርጉ የሶፍትዌር መሣሪያዎችንም እናዘጋጃለን።",
-  "copy.019": "መድረኮቻችን",
+  "copy.019": "ሥራዎቻችን",
   "copy.020": "አቅራቢዎችን ማግኘት",
   "access.004": "የምርት ማሳያ ገጽን፣ የምርት ስብስቦችንና ቀጥታ ጥያቄ መላክን የሚያሳይ ሥዕል",
   "copy.021": "የምርት ማሳያ ገጽን የሚያሳይ ገላጭ ሥዕል። በስብስብ የተደረደሩ ሦስት ጂኦሜትሪያዊ ቅርጾችና የቀጥታ ጥያቄ መላኪያ ክፍል አሉት። ሐሳቡን ለማስረዳት የተዘጋጀ ሥዕል እንጂ የመድረኩ የስክሪን ምስል አይደለም።",
@@ -118,5 +118,16 @@
   "access.009": "የገጹ ግርጌ ማውጫ",
   "error.title": "ገጹ አልተገኘም።",
   "error.description": "የሚፈልጉትን ገጽ ማግኘት አልቻልንም።",
-  "error.home": "ወደ MarketVision ይመለሱ"
+  "error.home": "ወደ MarketVision ይመለሱ",
+  "portfolio.services": "የሎጂስቲክስ አገልግሎቶች",
+  "portfolio.sharedtrucksTitle": "ጭነትን በጋራ ማጓጓዝ ያስቆጥባል።",
+  "portfolio.sharedtrucksBody": "SharedTrucks በአንድ መስመር አብረው ሊጓዙ የሚችሉ ጭነቶችን ያገናኛል። በዚህም በኢትዮጵያና በምሥራቅ አፍሪካ የንግድ ድርጅቶች የማጓጓዣ ወጪን እንዲጋሩና የተሽከርካሪ ቦታ በተሻለ ሁኔታ ሥራ ላይ እንዲውል ያግዛል።",
+  "portfolio.sharedtrucksConnection": "የንግድና የትራንስፖርት ቴክኖሎጂያችን፣ እያንዳንዱን ጭነት ከመረከብ እስከ ማድረስ የሚያስተባብረውን ቡድን ይደግፋል።",
+  "portfolio.sharedtrucksLink": "SharedTrucksን ይጎብኙ",
+  "portfolio.sharedtrucksAlt": "የተለያዩ ላኪዎች ጭነት በአንድ የጭነት መኪና ላይ",
+  "portfolio.sharedtrucksFeatures": "የSharedTrucks አገልግሎቶች",
+  "portfolio.sharedLoads": "የጋራ ጭነት",
+  "portfolio.shipmentCoordination": "የጭነት ማስተባበር",
+  "portfolio.businessFreight": "የንግድ ጭነት",
+  "footer.rights": "መብቱ በሕግ የተጠበቀ ነው።"
 }
