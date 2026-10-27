@@ -1,12 +1,22 @@
 # MarketVision Technology
 
-The company website for MarketVision Technology, an East African technology company building connections and visibility across markets. The page leads with its vision and mission, then presents AfricMade, Loadgistic and SharedTrucks in a dedicated portfolio section. AfricMade and Loadgistic are technology platforms; SharedTrucks is a logistics service business supported by the commerce and transport technology MarketVision builds. Consulting and software development remain part of its expertise in e-commerce, logistics and IoT telematics.
+The company website for MarketVision Technology, an East African technology company building connections and visibility across markets. The page leads with its vision and mission, then presents AfricMade, Loadgistic and CargoChatter in a dedicated portfolio section. Together, the three platforms address business and product discovery, logistics conversations, and visibility of transport capacity and shipment progress. Consulting and software development remain part of its expertise in e-commerce, logistics and IoT telematics.
 
-AfricMade is live at `https://africmade.com/`; Loadgistic is live at `https://loadgistic.com/`. SharedTrucks is live at `https://sharedtrucks.com/`. The existing design, colours, illustrations and logos are retained; its portfolio card uses the approved SharedTrucks logo and freight illustration. The contact form accepts general, platform, partnership and consulting enquiries.
+AfricMade is live at `https://africmade.com/`; Loadgistic is live at `https://loadgistic.com/`; CargoChatter is live at `https://cargochatter.com/`. The existing MarketVision design, colours and brand are retained. CargoChatter's portfolio card uses its approved logo and a conceptual provider-profile and conversation illustration, credited “Powered by CargoChatter”. The contact form accepts general, product, platform partnership and consulting enquiries.
 
 ## Copy direction
 
 Keep the hero focused on MarketVision’s purpose: connection, market access and visibility. Business and platform names and descriptions belong only in the portfolio section. The heading, logos and concrete descriptions establish the relationship; do not add ownership explanations or internal positioning notes to the public copy. Keep the tone direct and assured, with consulting and development presented in the expertise section.
+
+### How the portfolio fits the purpose
+
+- **AfricMade** makes businesses and products discoverable through supplier showrooms and product enquiries. Buyers agree purchases with suppliers directly; do not imply a hosted checkout or guaranteed product availability.
+- **CargoChatter** brings logistics-provider profiles and conversations into other websites and apps. The host chooses which providers appear, and customers can discuss shipments and request quotes. AfricMade is the existing hosting example described by the product owner and CargoChatter's public positioning.
+- **Loadgistic** makes vehicle capacity and routes visible, supports trusted transporter networks, and provides controlled updates for agreed shipments. Location information can come from different sources; do not present every vehicle as continuously GPS-tracked.
+
+The shared purpose is to put useful information within reach of the people who need to act on it. These complementary roles do not establish an automatic integration between all three platforms, shared accounts, instant rates, or a single booking and payment flow. CargoChatter's public marketing-site chat is an interactive demonstration; it does not send enquiries to providers.
+
+The October 2026 copy review used the existing MarketVision vision and site history, [AfricMade's about page](https://africmade.com/about) and supplier enquiry flow, [CargoChatter's website](https://cargochatter.com/) and demo implementation, and [Loadgistic's about page](https://loadgistic.com/about), [tracking page](https://loadgistic.com/track), and [public product source](https://github.com/falmata-tech/loadgistic). Preserve the distinction between observed product behavior, owner-provided positioning, and future capabilities.
 
 ## Website files
 
@@ -17,7 +27,7 @@ Keep the hero focused on MarketVision’s purpose: connection, market access and
 - `assets/` contains the self-hosted font, logo and illustrations.
 - `404.html` provides the missing-page view.
 
-No package installation or build step is required. GitHub Pages publishes `main` from the repository root. The `.nojekyll` file keeps the site as plain static files.
+GitHub Pages publishes the generated static files from `main` at the repository root. The `.nojekyll` file keeps the site as plain static files. Serving the committed output requires no package installation; copy and structure changes use the local rebuild described below.
 
 ## Contact form setup
 
@@ -56,5 +66,6 @@ The language chooser is visible outside the mobile navigation and uses native di
 - `index.html`, `am/index.html`, `om/index.html`, `so/index.html`, `404.html` and `sitemap.xml` are generated. Update the templates/catalogs and rebuild rather than editing those output files directly.
 - Install the build-only Python dependency with `python -m pip install -r scripts/requirements.txt`, then run `python scripts/build-locales.py`. The public site itself remains plain static HTML, CSS and JavaScript; it has no Python or translation-service runtime.
 - `languages.js` provides translated form validation and the language-control interactions. Existing form recipients and Web3Forms access keys are unchanged. Submission payloads include the selected language.
+- CargoChatter links preserve the selected language with `?lang=am`, `?lang=om` or `?lang=so`. Its illustration credit remains “Powered by CargoChatter” in every language.
 
 Amharic uses self-hosted Noto Sans Ethiopic, with normal width and variable weight, alongside Inter for Latin brand lettering. The font comes from the [official Google Fonts source](https://github.com/google/fonts/tree/main/ofl/notosansethiopic); its license is included in `assets/OFL-NotoSansEthiopic.txt`. The font is loaded locally, including in inline illustration labels where present. Translation keeps the existing business claims and brand names, with phrase order and line breaks adapted to each language.
