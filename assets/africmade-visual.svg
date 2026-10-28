@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="platform-illustration" width="1000" height="650" viewBox="0 0 1000 650" fill="none" role="img" focusable="false" aria-labelledby="africmade-title" aria-describedby="africmade-desc" aria-label="A supplier showroom with products, location information and a direct enquiry panel" data-i18n-aria-label="access.004">
-  <title id="africmade-title" data-i18n-html="heading.africmade-title">AfricMade supplier showroom illustration</title>
-  <desc id="africmade-desc" data-i18n-text="copy.021">A conceptual supplier showroom in AfricMade's orange and charcoal colors. A location cue sits above a grain sack, a woven basket and manufactured packaging. A selected product leads to an enquiry list and a supplier inbox. This is an explanatory illustration, not a product screenshot or a checkout.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" class="platform-illustration" width="1000" height="650" viewBox="0 0 1000 650" fill="none" role="img" focusable="false" aria-labelledby="africmade-title" aria-describedby="africmade-desc" aria-label="Illustration of an AfricMade supplier showroom" data-i18n-aria-label="access.004">
+  <title id="africmade-title" data-i18n-html="heading.africmade-title">AfricMade showroom illustration</title>
+  <desc id="africmade-desc" data-i18n-text="copy.021">Farm produce, handmade goods and manufactured products in a supplier showroom, with a location map and an enquiry form.</desc>
   <rect width="1000" height="650" fill="#FFF0E8"/>
   <rect x="38" y="36" width="924" height="576" rx="22" fill="#FFFFFF" stroke="#DEDFDD" stroke-width="2"/>
 

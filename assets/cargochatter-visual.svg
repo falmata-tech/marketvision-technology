@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="520" viewBox="0 0 640 520" fill="none" role="img" aria-labelledby="cargochatter-title cargochatter-desc">
-  <title id="cargochatter-title">A provider, a shipment and a conversation</title>
-  <desc id="cargochatter-desc">An editorial illustration of CargoChatter embedded in a business website. A selected logistics provider profile connects to a conversation with parcel and route details, a reply and a message composer. Abstract lines stand in for content; no prices, real messages or availability claims are shown. This is a conceptual illustration, not a product screenshot.</desc>
+  <title id="cargochatter-title">CargoChatter provider and chat illustration</title>
+  <desc id="cargochatter-desc">Illustration of a logistics provider profile beside a chat window on a business website.</desc>
 
   <!-- A quiet host-page frame establishes the embedded experience. -->
   <rect x="24" y="38" width="592" height="432" rx="16" fill="#FFFFFF" stroke="#DADDD8" stroke-width="1.6"/>

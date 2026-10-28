@@ -8,7 +8,7 @@ import json,re
 
 ROOT=Path(__file__).resolve().parents[1]
 LANGUAGES={'en':('English','en_US'),'am':('አማርኛ','am_ET'),'om':('Afaan Oromoo','om_ET'),'so':('Soomaali','so_ET')}
-VERSION='20261027-branded-platform-graphics'
+VERSION='20261028-plain-language'
 
 
 def fragment(parent, value):

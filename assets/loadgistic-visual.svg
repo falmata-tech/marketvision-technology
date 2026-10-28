@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="650" viewBox="0 0 1000 650" fill="none" class="platform-illustration" role="img" focusable="false" aria-labelledby="loadgistic-title loadgistic-desc" aria-label="Illustration of available transport capacity, a shared route and shipment updates" data-i18n-aria-label="access.006">
-  <title id="loadgistic-title" data-i18n-html="heading.loadgistic-title">Loadgistic capacity sharing and shipment visibility illustration</title>
-  <desc id="loadgistic-desc" data-i18n-text="copy.035">A freight vehicle with available cargo space connects to a private network, then to a shipment update card. Precise route lines and a lock symbol convey controlled sharing and shipment visibility without depicting real locations or shipment data. This is a conceptual illustration, not a product screenshot.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="650" viewBox="0 0 1000 650" fill="none" class="platform-illustration" role="img" focusable="false" aria-labelledby="loadgistic-title loadgistic-desc" aria-describedby="loadgistic-desc" aria-label="Illustration of the Loadgistic transport map" data-i18n-aria-label="access.006">
+  <title id="loadgistic-title" data-i18n-html="heading.loadgistic-title">Loadgistic transport map illustration</title>
+  <desc id="loadgistic-desc" data-i18n-text="copy.035">A map of vehicles and routes beside a truck showing available cargo space, a private sharing option and shipment progress.</desc>
   <defs>
     <filter id="lgv-dashboard-shadow" x="-10%" y="-12%" width="120%" height="130%" color-interpolation-filters="sRGB">
       <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="lgv-panel-blur"/>
