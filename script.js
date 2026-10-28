@@ -33,20 +33,6 @@
       if (event.matches) closeMenu(false);
     });
   }
-  document.querySelectorAll('[data-capability]').forEach(function (link) {
-    link.addEventListener('click', function () {
-      const target = document.getElementById(link.dataset.capability);
-      if (target instanceof HTMLDetailsElement) target.open = true;
-    });
-  });
-  function openHashCapability() {
-    const hash = window.location.hash.slice(1);
-    if (!hash.startsWith('capability-')) return;
-    const target = document.getElementById(hash);
-    if (target instanceof HTMLDetailsElement) target.open = true;
-  }
-  window.addEventListener('hashchange', openHashCapability);
-  openHashCapability();
   const year = document.getElementById('copyright-year');
   if (year) year.textContent = String(new Date().getFullYear());
 

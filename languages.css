@@ -24,11 +24,11 @@
 .language-options a[aria-current="page"] svg { visibility: visible; }
 .language-switcher [lang="am"] { font-family: "Noto Sans Ethiopic", Inter, sans-serif; }
 html[lang="am"] body, html[lang="am"] input, html[lang="am"] select, html[lang="am"] textarea, html[lang="am"] button { font-family: Inter, "Noto Sans Ethiopic", sans-serif; }
-html[lang="am"] :is(h1,h2,h3,p,li,dt,dd,label,a,button,summary,.section-label,.eyebrow,.footer-label,.approach-label,.platform-art-top,.illustration-note,.sector-inner span,.sector-inner small) { letter-spacing: 0; }
+html[lang="am"] :is(h1,h2,h3,p,li,dt,dd,label,a,button,summary,.section-label,.eyebrow,.footer-label,.platform-art-top,.illustration-note,.sector-inner span,.sector-inner small) { letter-spacing: 0; }
 html[lang="am"] :is(h1,h2) { line-height: 1.3; }
 html[lang="am"] h3 { line-height: 1.5; }
 html[lang="am"] p { line-height: 1.9; }
-html:not([lang="en"]) :is(.hero-copy,.network-copy,.commerce-copy,.vision-content,.expertise-intro,.company-copy,.contact-copy) { min-width: 0; }
+html:not([lang="en"]) :is(.hero-copy,.network-copy,.commerce-copy,.vision-content,.contact-copy) { min-width: 0; }
 html:not([lang="en"]) :is(h1,h2,h3) { overflow-wrap: break-word; }
 html:not([lang="en"]) .hero h1 { white-space: normal; }
 html:not([lang="en"]) .text-link { white-space: normal; }
@@ -80,7 +80,7 @@ html[lang="am"] .contact-field :is(input,select,textarea) { font-family: Inter,"
   html:not([lang="en"]) .sector-inner > a { padding-inline-end: 14px; gap: 10px; }
   html:not([lang="en"]) .sector-inner > a > span:not(.sector-number) { font-size: 15px; }
   html:not([lang="en"]) .vision-copy p { font-size: 14px; }
-  html[lang="am"] :is(h2,.expertise-intro h2,.company h2) { font-size: 36px; }
+  html[lang="am"] h2 { font-size: 36px; }
 }
 @media (max-width: 600px) {
   .site-header { position: sticky; top: 0; height: 76px; }
@@ -100,8 +100,7 @@ html[lang="am"] .contact-field :is(input,select,textarea) { font-family: Inter,"
   html:not([lang="en"]) .sector-inner > a > span:not(.sector-number) { display: block; }
   html:not([lang="en"]) .sector-inner small { margin-top: 6px; }
   html:not([lang="en"]) .platform-content > p { font-size: 14px; }
-  html:not([lang="en"]) .capability-body p, html:not([lang="en"]) .approach-row p { font-size: 14px; }
-  html[lang="am"] :is(h2,.expertise-intro h2,.company h2) { font-size: 32px; }
+  html[lang="am"] h2 { font-size: 32px; }
   html:not([lang="en"]) .contact-copy > p { font-size: 14px; }
 }
 @media (max-width: 360px) {
@@ -115,7 +114,7 @@ html[lang="am"] .contact-field :is(input,select,textarea) { font-family: Inter,"
 
 html[lang="am"] .primary-nav > a:not(.button):not(.nav-cta) { font-size: 14px; }
 html[lang="am"] :is(.button,.text-link,.external-link,.nav-cta) { font-size: 13px; }
-html[lang="am"] :is(.eyebrow,.section-label,.purpose-statement h3,.platform-art-top,.illustration-note,.approach-label,.footer-label) { font-size: 11px; }
+html[lang="am"] :is(.eyebrow,.section-label,.purpose-statement h3,.platform-art-top,.illustration-note,.footer-label) { font-size: 11px; }
 html[lang="am"] .hero-description { font-size: 16px; }
 .site-header { position: sticky; top: 0; }
 
