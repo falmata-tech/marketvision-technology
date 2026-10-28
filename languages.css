@@ -24,11 +24,11 @@
 .language-options a[aria-current="page"] svg { visibility: visible; }
 .language-switcher [lang="am"] { font-family: "Noto Sans Ethiopic", Inter, sans-serif; }
 html[lang="am"] body, html[lang="am"] input, html[lang="am"] select, html[lang="am"] textarea, html[lang="am"] button { font-family: Inter, "Noto Sans Ethiopic", sans-serif; }
-html[lang="am"] :is(h1,h2,h3,p,li,dt,dd,label,a,button,summary,.section-label,.eyebrow,.footer-label,.platform-art-top,.illustration-note,.sector-inner span,.sector-inner small) { letter-spacing: 0; }
+html[lang="am"] :is(h1,h2,h3,p,li,dt,dd,label,a,button,summary,.section-label,.eyebrow,.footer-label,.platform-art-top,.illustration-note,.portfolio-index span,.portfolio-index small) { letter-spacing: 0; }
 html[lang="am"] :is(h1,h2) { line-height: 1.3; }
 html[lang="am"] h3 { line-height: 1.5; }
 html[lang="am"] p { line-height: 1.9; }
-html:not([lang="en"]) :is(.hero-copy,.network-copy,.commerce-copy,.vision-content,.contact-copy) { min-width: 0; }
+html:not([lang="en"]) :is(.hero-copy,.company-copy,.perspective-copy,.contact-copy) { min-width: 0; }
 html:not([lang="en"]) :is(h1,h2,h3) { overflow-wrap: break-word; }
 html:not([lang="en"]) .hero h1 { white-space: normal; }
 html:not([lang="en"]) .text-link { white-space: normal; }
@@ -58,8 +58,6 @@ html:is([lang="om"],[lang="so"]) .hero h1 { font-size: clamp(51px,5.3vw,78px); l
 html:not([lang="en"]) .platform-title { flex-direction: column; align-items: flex-start; }
 html:not([lang="en"]) .platform-content > p { font-size: 14px; }
 html:not([lang="en"]) .platform-art-top { gap: 12px; line-height: 1.5; }
-html:not([lang="en"]) .sector-inner > a > span:not(.sector-number) { min-width: 0; }
-html:not([lang="en"]) .sector-inner small { font-size: 11px; line-height: 1.5; }
 html:not([lang="en"]) .feature-list li { font-size: 10px; line-height: 1.6; }
 html[lang="am"] .contact-field :is(input,select,textarea) { font-family: Inter,"Noto Sans Ethiopic",sans-serif; }
 @media (max-width: 1180px) {
@@ -77,9 +75,6 @@ html[lang="am"] .contact-field :is(input,select,textarea) { font-family: Inter,"
 @media (max-width: 800px) {
   html[lang="am"] .hero h1 { font-size: 53px; }
   html:is([lang="om"],[lang="so"]) .hero h1 { font-size: 53px; }
-  html:not([lang="en"]) .sector-inner > a { padding-inline-end: 14px; gap: 10px; }
-  html:not([lang="en"]) .sector-inner > a > span:not(.sector-number) { font-size: 15px; }
-  html:not([lang="en"]) .vision-copy p { font-size: 14px; }
   html[lang="am"] h2 { font-size: 36px; }
 }
 @media (max-width: 600px) {
@@ -97,8 +92,6 @@ html[lang="am"] .contact-field :is(input,select,textarea) { font-family: Inter,"
   html:not([lang="en"]) .hero-description { font-size: 15px; }
   html:not([lang="en"]) .hero-actions { gap: 15px 20px; }
   html:not([lang="en"]) .hero-actions :is(.button,.text-link) { font-size: 12px; }
-  html:not([lang="en"]) .sector-inner > a > span:not(.sector-number) { display: block; }
-  html:not([lang="en"]) .sector-inner small { margin-top: 6px; }
   html:not([lang="en"]) .platform-content > p { font-size: 14px; }
   html[lang="am"] h2 { font-size: 32px; }
   html:not([lang="en"]) .contact-copy > p { font-size: 14px; }
@@ -114,10 +107,13 @@ html[lang="am"] .contact-field :is(input,select,textarea) { font-family: Inter,"
 
 html[lang="am"] .primary-nav > a:not(.button):not(.nav-cta) { font-size: 14px; }
 html[lang="am"] :is(.button,.text-link,.external-link,.nav-cta) { font-size: 13px; }
-html[lang="am"] :is(.eyebrow,.section-label,.purpose-statement h3,.platform-art-top,.illustration-note,.footer-label) { font-size: 11px; }
+html[lang="am"] :is(.eyebrow,.section-label,.platform-art-top,.illustration-note,.footer-label) { font-size: 11px; }
 html[lang="am"] .hero-description { font-size: 16px; }
 .site-header { position: sticky; top: 0; }
 
 @media (max-width: 360px) { .header-inner { width: calc(100% - 24px); gap: 4px; } }
 
 .language-options { max-height: min(320px,calc(100dvh - 110px)); overflow-y: auto; }
+
+html[lang="am"] :is(.company-heading h2,.perspective-heading h2) { letter-spacing:0; line-height:1.4; }
+html:not([lang="en"]) .portfolio-index small { font-size:11px; }
