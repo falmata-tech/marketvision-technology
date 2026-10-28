@@ -25,7 +25,10 @@ The October 2026 copy review used the existing MarketVision vision and site hist
 - `script.js` handles navigation and form submission.
 - `form-config.js` holds the public Web3Forms form access key.
 - `assets/` contains the self-hosted font, logo and illustrations.
+- `assets/africmade-visual.svg` and `assets/loadgistic-visual.svg` are the editable portfolio artwork. The language build inserts them at the template's `data-platform-illustration` slots and translates their labels and descriptions. Edit these source SVGs rather than generated inline copies.
 - `404.html` provides the missing-page view.
+
+The portfolio illustrations follow each product's own design: AfricMade uses orange (`#FF4B00`, action `#C93600`), charcoal and warm white for supplier showrooms, product collections and enquiries. Loadgistic uses cobalt (`#155EEF`), navy (`#0B1D3A`) and pale blue for capacity maps, vehicle space and controlled shipment updates. Illustrations are conceptual; they do not show customer data, actual routes or a live shipment. Visible labels and accessible descriptions are localized across all four pages.
 
 GitHub Pages publishes the generated static files from `main` at the repository root. The `.nojekyll` file keeps the site as plain static files. Serving the committed output requires no package installation; copy and structure changes use the local rebuild described below.
 

@@ -8,7 +8,7 @@ import json,re
 
 ROOT=Path(__file__).resolve().parents[1]
 LANGUAGES={'en':('English','en_US'),'am':('አማርኛ','am_ET'),'om':('Afaan Oromoo','om_ET'),'so':('Soomaali','so_ET')}
-VERSION='20261027-portfolio-cargochatter'
+VERSION='20261027-branded-platform-graphics'
 
 
 def fragment(parent, value):
@@ -144,8 +144,23 @@ def build_error(source):
     (ROOT/'404.html').write_text('<!doctype html>\n'+etree.tostring(doc,encoding='unicode',method='html')+'\n',encoding='utf-8')
 
 
-def main():
+def page_source():
     source=html.document_fromstring((ROOT/'site-template.html').read_text(encoding='utf-8'))
+    # Keep each illustration in one editable SVG, then inline it for translation.
+    for placeholder in source.xpath('//*[@data-platform-illustration]'):
+        name=placeholder.get('data-platform-illustration')
+        if name not in {'africmade','loadgistic'}:
+            raise ValueError(f'Unknown platform illustration: {name}')
+        artwork=html.fragment_fromstring((ROOT/'assets'/f'{name}-visual.svg').read_text(encoding='utf-8'))
+        if artwork.tag!='svg':raise ValueError(f'{name}: illustration must be an SVG')
+        artwork.set('data-platform-illustration',name)
+        artwork.tail=placeholder.tail
+        placeholder.getparent().replace(placeholder,artwork)
+    return source
+
+
+def main():
+    source=page_source()
     english=json.loads((ROOT/'locales/en.json').read_text(encoding='utf-8'))
     urls=[]
     for lang in LANGUAGES:

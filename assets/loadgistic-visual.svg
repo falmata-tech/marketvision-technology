@@ -1,57 +1,144 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650" fill="none" role="img" aria-labelledby="loadgistic-title loadgistic-desc">
-  <title id="loadgistic-title">Loadgistic capacity sharing and shipment visibility illustration</title>
-  <desc id="loadgistic-desc">A freight vehicle with available cargo space connects to a private network, then to a shipment update card. Precise route lines and a lock symbol convey controlled sharing and shipment visibility without depicting real locations or shipment data. This is a conceptual illustration, not a product screenshot.</desc>
-  <rect width="1000" height="650" fill="#F4F2EC"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="650" viewBox="0 0 1000 650" fill="none" class="platform-illustration" role="img" focusable="false" aria-labelledby="loadgistic-title loadgistic-desc" aria-label="Illustration of available transport capacity, a shared route and shipment updates" data-i18n-aria-label="access.006">
+  <title id="loadgistic-title" data-i18n-html="heading.loadgistic-title">Loadgistic capacity sharing and shipment visibility illustration</title>
+  <desc id="loadgistic-desc" data-i18n-text="copy.035">A freight vehicle with available cargo space connects to a private network, then to a shipment update card. Precise route lines and a lock symbol convey controlled sharing and shipment visibility without depicting real locations or shipment data. This is a conceptual illustration, not a product screenshot.</desc>
+  <defs>
+    <filter id="lgv-dashboard-shadow" x="-10%" y="-12%" width="120%" height="130%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="lgv-panel-blur"/>
+      <feOffset in="lgv-panel-blur" dy="10" result="lgv-panel-offset"/>
+      <feFlood flood-color="#0B1D3A" flood-opacity=".07" result="lgv-panel-color"/>
+      <feComposite in="lgv-panel-color" in2="lgv-panel-offset" operator="in" result="lgv-panel-shadow"/>
+      <feMerge><feMergeNode in="lgv-panel-shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="lgv-truck-shadow" x="-15%" y="-20%" width="130%" height="145%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="13" result="lgv-truck-blur"/>
+      <feOffset in="lgv-truck-blur" dy="10" result="lgv-truck-offset"/>
+      <feFlood flood-color="#0B1D3A" flood-opacity=".12" result="lgv-truck-color"/>
+      <feComposite in="lgv-truck-color" in2="lgv-truck-offset" operator="in" result="lgv-truck-shadow-layer"/>
+      <feMerge><feMergeNode in="lgv-truck-shadow-layer"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="lgv-map-clip">
+      <rect x="54" y="122" width="892" height="296" rx="16"/>
+    </clipPath>
+    <g id="lgv-vehicle-glyph" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-12-7H3V5H-12Z"/>
+      <path d="M3-3H8L13 2V5H3"/>
+      <circle cx="-7" cy="6" r="3" fill="currentColor" stroke="none"/>
+      <circle cx="8" cy="6" r="3" fill="currentColor" stroke="none"/>
+    </g>
+  </defs>
 
-  <!-- A route links capacity, a private network, and shipment updates. -->
-  <path d="M266 284V327C266 336 274 344 283 344H717C726 344 734 336 734 327V284M500 344V406" stroke="#AAB5C6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M266 284V327C266 336 274 344 283 344H500V406" stroke="#2557D6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="500" cy="344" r="8" fill="#2557D6" stroke="#F4F2EC" stroke-width="4"/>
+  <rect width="1000" height="650" fill="#EAF1FF"/>
+  <rect x="36" y="26" width="928" height="596" rx="25" fill="#FFFFFF" stroke="#D7DFEB" stroke-width="1.5" filter="url(#lgv-dashboard-shadow)"/>
 
-  <!-- Capacity card. -->
-  <rect x="58" y="52" width="416" height="238" rx="18" fill="#FFFFFF" stroke="#DADDD8" stroke-width="2"/>
-  <text x="88" y="102" fill="#252A2D" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600" letter-spacing="-.5">Available capacity</text>
-  <path d="M88 124H444" stroke="#E4E6E1" stroke-width="2"/>
+  <!-- Loadgistic's compact mark anchors a single capacity workspace. -->
+  <rect x="63" y="52" width="44" height="44" rx="12" fill="#0B1D3A"/>
+  <g transform="translate(64 52) scale(.087)">
+    <path d="M151 120H227L172 370H309L291 440H155C112 440 87 405 97 361L151 120Z" fill="#FFFFFF"/>
+    <path d="M270 191H407C422 191 430 203 424 217L407 257H247L266 203C268 196 276 191 280 191Z M246 279H389C403 279 410 290 405 303L387 346H222L240 292C242 285 244 282 246 279Z M316 370H393C406 370 412 380 407 392L387 440H291L311 384C313 377 315 373 316 370Z" fill="#6BA5FF"/>
+  </g>
+  <text x="126" y="86" fill="#0B1D3A" font-size="30" font-weight="650" letter-spacing="-.55" data-i18n-text="copy.036">Available capacity</text>
+  <g stroke="#526375" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+    <path d="M879 68H917M879 81H917"/>
+    <circle cx="890" cy="68" r="4" fill="#FFFFFF"/>
+    <circle cx="907" cy="81" r="4" fill="#FFFFFF"/>
+  </g>
 
-  <!-- Vehicle geometry: solid cargo blocks beside visibly open space. -->
-  <rect x="101" y="156" width="228" height="82" rx="5" fill="#F8F9F6" stroke="#252A2D" stroke-width="2"/>
-  <rect x="114" y="170" width="49" height="54" rx="3" fill="#2557D6"/>
-  <rect x="172" y="170" width="49" height="54" rx="3" fill="#2557D6"/>
-  <rect x="231" y="170" width="84" height="54" rx="3" fill="#ECF1FF" stroke="#92A9DE" stroke-width="2" stroke-dasharray="5 5"/>
-  <path d="M263 197H283M273 187V207" stroke="#2557D6" stroke-width="2" stroke-linecap="round"/>
-  <path d="M329 183H365L395 210V238H329V183Z" fill="#E2E7E3" stroke="#252A2D" stroke-width="2" stroke-linejoin="round"/>
-  <path d="M341 194H359L377 210H341V194Z" fill="#FFFFFF" stroke="#252A2D" stroke-width="2" stroke-linejoin="round"/>
-  <path d="M97 238H402" stroke="#252A2D" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="144" cy="239" r="15" fill="#252A2D"/>
-  <circle cx="144" cy="239" r="6" fill="#FFFFFF"/>
-  <circle cx="292" cy="239" r="15" fill="#252A2D"/>
-  <circle cx="292" cy="239" r="6" fill="#FFFFFF"/>
-  <circle cx="366" cy="239" r="15" fill="#252A2D"/>
-  <circle cx="366" cy="239" r="6" fill="#FFFFFF"/>
+  <!-- A schematic map uses static pins and unnamed routes, without live positions. -->
+  <g clip-path="url(#lgv-map-clip)" aria-hidden="true">
+    <rect x="54" y="122" width="892" height="296" fill="#F3F5F7"/>
+    <path d="M54 122H262L218 191H54Z M54 244L165 237L235 290L178 418H54Z M322 122H497L462 204L364 242L284 195Z M315 329L404 293L488 336L468 418H266Z M696 122H946V207L818 194Z M788 353L946 333V418H752Z" fill="#EAF1FF"/>
+    <g stroke="#D7DFEB" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M39 216L177 216L264 141L363 141L438 219L549 219L643 130" stroke-width="11"/>
+      <path d="M117 432L188 331L280 331L351 264L493 264L560 333L742 333L805 403L956 403" stroke-width="12"/>
+      <path d="M266 111L245 192L281 271L245 335L264 430M382 111L344 201L360 272L397 341L366 430" stroke-width="7"/>
+      <path d="M51 371L147 371L204 303M407 173H545M650 392L699 298L803 258L953 274" stroke-width="6"/>
+    </g>
+    <g stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M39 216L177 216L264 141L363 141L438 219L549 219L643 130" stroke-width="7"/>
+      <path d="M117 432L188 331L280 331L351 264L493 264L560 333L742 333L805 403L956 403" stroke-width="8"/>
+      <path d="M266 111L245 192L281 271L245 335L264 430M382 111L344 201L360 272L397 341L366 430" stroke-width="4"/>
+      <path d="M51 371L147 371L204 303M407 173H545M650 392L699 298L803 258L953 274" stroke-width="3"/>
+    </g>
 
-  <!-- Network card, represented by business nodes rather than people. -->
-  <rect x="526" y="52" width="416" height="238" rx="18" fill="#FFFFFF" stroke="#DADDD8" stroke-width="2"/>
-  <text x="556" y="102" fill="#252A2D" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600" letter-spacing="-.5">Shared with your network</text>
-  <path d="M556 124H912" stroke="#E4E6E1" stroke-width="2"/>
-  <path d="M614 174H664L704 210M614 246H664L704 210M764 210H816V174H852M816 210V246H852" stroke="#AFBAC8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="586" y="158" width="32" height="32" rx="7" fill="#F3F5F1" stroke="#A6B0A6" stroke-width="2"/>
-  <rect x="586" y="230" width="32" height="32" rx="7" fill="#F3F5F1" stroke="#A6B0A6" stroke-width="2"/>
-  <rect x="850" y="158" width="32" height="32" rx="7" fill="#F3F5F1" stroke="#A6B0A6" stroke-width="2"/>
-  <rect x="850" y="230" width="32" height="32" rx="7" fill="#F3F5F1" stroke="#A6B0A6" stroke-width="2"/>
-  <rect x="704" y="180" width="60" height="60" rx="15" fill="#2557D6"/>
-  <rect x="721" y="207" width="26" height="20" rx="4" stroke="#FFFFFF" stroke-width="2"/>
-  <path d="M726 207V201C726 197 729 194 734 194C739 194 742 197 742 201V207" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
-  <path d="M734 214V220" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="172" cy="323" r="49" fill="#155EEF" fill-opacity=".035" stroke="#155EEF" stroke-opacity=".25" stroke-width="1.5" stroke-dasharray="5 6"/>
+    <path d="M172 323L187 331H272C277 331 282 329 286 325L344 269C348 265 351 259 351 253V218" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M172 323L187 331H272C277 331 282 329 286 325L344 269C348 265 351 259 351 253V218" stroke="#155EEF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Shipment update card: an abstract route, without fabricated values. -->
-  <rect x="208" y="406" width="584" height="196" rx="18" fill="#FFFFFF" stroke="#DADDD8" stroke-width="2"/>
-  <circle cx="250" cy="449" r="13" fill="#ECF1FF"/>
-  <path d="M244 449L248 453L256 445" stroke="#2557D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="278" y="458" fill="#252A2D" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600" letter-spacing="-.5">Shipment updates</text>
-  <path d="M240 480H760" stroke="#E4E6E1" stroke-width="2"/>
-  <path d="M268 543H390C401 543 410 534 410 523C410 512 419 503 430 503H570C581 503 590 512 590 523C590 534 599 543 610 543H732" stroke="#CFD7E1" stroke-width="3" stroke-linecap="round"/>
-  <path d="M268 543H390C401 543 410 534 410 523C410 512 419 503 430 503H500" stroke="#2557D6" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="268" cy="543" r="8" fill="#FFFFFF" stroke="#2557D6" stroke-width="3"/>
-  <circle cx="500" cy="503" r="11" fill="#2557D6" stroke="#FFFFFF" stroke-width="4"/>
-  <circle cx="732" cy="543" r="8" fill="#FFFFFF" stroke="#AAB5C6" stroke-width="3"/>
+    <g transform="translate(172 310)">
+      <path d="M0 27L-7 15C-19 12-25 3-25-8C-25-22-14-33 0-33C14-33 25-22 25-8C25 3 19 12 7 15Z" fill="#155EEF" stroke="#FFFFFF" stroke-width="3"/>
+      <use xlink:href="#lgv-vehicle-glyph" transform="translate(0 -8)" color="#FFFFFF"/>
+    </g>
+    <g transform="translate(351 199)">
+      <path d="M0 27L-7 15C-19 12-25 3-25-8C-25-22-14-33 0-33C14-33 25-22 25-8C25 3 19 12 7 15Z" fill="#155EEF" stroke="#FFFFFF" stroke-width="3"/>
+      <use xlink:href="#lgv-vehicle-glyph" transform="translate(0 -8)" color="#FFFFFF"/>
+    </g>
+    <g transform="translate(423 359)">
+      <path d="M0 24L-6 13C-16 10-22 2-22-8C-22-20-12-30 0-30C12-30 22-20 22-8C22 2 16 10 6 13Z" fill="#667085" stroke="#FFFFFF" stroke-width="3"/>
+      <use xlink:href="#lgv-vehicle-glyph" transform="translate(0 -8) scale(.87)" color="#FFFFFF"/>
+    </g>
+  </g>
+  <rect x="54.75" y="122.75" width="890.5" height="294.5" rx="15.25" stroke="#D7DFEB" stroke-width="1.5"/>
+
+  <!-- The foreground vehicle makes occupied and available cargo space tangible. -->
+  <g aria-hidden="true">
+    <rect x="489" y="158" width="425" height="234" rx="18" fill="#FFFFFF" stroke="#D7DFEB" stroke-width="1.5" filter="url(#lgv-truck-shadow)"/>
+    <rect x="513" y="181" width="40" height="6" rx="3" fill="#0B1D3A"/>
+    <rect x="562" y="181" width="70" height="6" rx="3" fill="#D7DFEB"/>
+    <circle cx="882" cy="184" r="5" fill="#667085"/>
+
+    <path d="M525 217H754V309H525Z" fill="#F3F5F7" stroke="#0B1D3A" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M533 224H746" stroke="#FFFFFF" stroke-width="2"/>
+    <rect x="538" y="233" width="43" height="61" rx="3" fill="#667085"/>
+    <rect x="588" y="233" width="43" height="61" rx="3" fill="#667085"/>
+    <path d="M548 233V246H571V233M598 233V246H621V233" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="2"/>
+    <rect x="643" y="232" width="98" height="63" rx="4" fill="#EAF1FF" stroke="#155EEF" stroke-width="2" stroke-dasharray="5 4"/>
+    <path d="M681 263H703M692 252V274" stroke="#155EEF" stroke-width="2.5" stroke-linecap="round"/>
+
+    <path d="M754 244H809C814 244 817 246 820 250L846 279V309H754Z" fill="#155EEF" stroke="#0B1D3A" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M768 255H803C806 255 808 256 810 259L824 276H768Z" fill="#EAF1FF" stroke="#0B1D3A" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M768 286H782" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M835 288H846V298H835Z" fill="#FFFFFF"/>
+    <path d="M520 309H853" stroke="#0B1D3A" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="555" cy="311" r="17" fill="#0B1D3A"/>
+    <circle cx="555" cy="311" r="7" fill="#FFFFFF"/>
+    <circle cx="708" cy="311" r="17" fill="#0B1D3A"/>
+    <circle cx="708" cy="311" r="7" fill="#FFFFFF"/>
+    <circle cx="811" cy="311" r="17" fill="#0B1D3A"/>
+    <circle cx="811" cy="311" r="7" fill="#FFFFFF"/>
+    <path d="M518 340H882" stroke="#D7DFEB" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M539 360H626" stroke="#667085" stroke-width="7" stroke-linecap="round"/>
+    <path d="M650 360H737" stroke="#155EEF" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 10"/>
+    <path d="M844 356L850 362L862 350" stroke="#667085" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Wide rows preserve the translated labels and keep the sharing model visible. -->
+  <path d="M65 521H935" stroke="#D7DFEB" stroke-width="1.5"/>
+  <g aria-hidden="true">
+    <rect x="72" y="450" width="43" height="43" rx="12" fill="#EAF1FF"/>
+    <path d="M87 470V466C87 462 90 459 94 459C98 459 101 462 101 466V470" stroke="#155EEF" stroke-width="2.2" stroke-linecap="round"/>
+    <rect x="84" y="470" width="20" height="15" rx="3" stroke="#155EEF" stroke-width="2.2"/>
+    <path d="M94 476V480" stroke="#155EEF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M760 472H803M823 472H871" stroke="#D7DFEB" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="725" y="454" width="36" height="36" rx="10" fill="#F3F5F7" stroke="#D7DFEB" stroke-width="1.5"/>
+    <path d="M736 480V465H750V480M741 469H745M741 474H745" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="813" cy="472" r="18" fill="#155EEF"/>
+    <path d="M805 472L811 478L821 467" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="870" y="454" width="36" height="36" rx="10" fill="#F3F5F7" stroke="#D7DFEB" stroke-width="1.5"/>
+    <use xlink:href="#lgv-vehicle-glyph" transform="translate(888 472) scale(.72)" color="#667085"/>
+  </g>
+  <text x="134" y="481" fill="#0B1D3A" font-size="26" font-weight="600" letter-spacing="-.35" data-i18n-text="copy.037">Shared with your network</text>
+
+  <g aria-hidden="true">
+    <rect x="72" y="547" width="43" height="43" rx="12" fill="#EAF1FF"/>
+    <path d="M88 555H102V580H85V558" stroke="#155EEF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M90 555V561H84M90 568H98M90 574H95" stroke="#155EEF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M744 569H888" stroke="#D7DFEB" stroke-width="3" stroke-linecap="round"/>
+    <path d="M744 569H815" stroke="#155EEF" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="743" cy="569" r="13" fill="#155EEF"/>
+    <path d="M737 569L741 573L749 565" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="815" cy="569" r="16" fill="#EAF1FF"/>
+    <circle cx="815" cy="569" r="8" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="888" cy="569" r="10" fill="#FFFFFF" stroke="#D7DFEB" stroke-width="2.5"/>
+  </g>
+  <text x="134" y="578" fill="#0B1D3A" font-size="26" font-weight="600" letter-spacing="-.35" data-i18n-text="copy.038">Shipment updates</text>
 </svg>

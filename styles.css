@@ -62,8 +62,15 @@ h2{font-size:clamp(37px,3.5vw,53px);letter-spacing:-2.6px;line-height:1.14;font-
 .section-heading>p{font-size:14px;line-height:1.8;color:#627078;max-width:282px;margin:0 0 5px}
 .platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 .platform{background:white;min-width:0;border:1px solid #dce1e5;display:flex;flex-direction:column}
-.platform-art{position:relative;background:#efeee8;overflow:hidden}.platform-loadgistic .platform-art{background:#e8eef5}
+.platform-africmade{--platform-accent:#c93600;--platform-canvas:#fff0e8;--platform-border:#ecd9cf;border-color:var(--platform-border)}
+.platform-loadgistic{--platform-accent:#155eef;--platform-canvas:#eaf1ff;--platform-border:#d7dfeb;border-color:var(--platform-border)}
+.platform-art{position:relative;background:var(--platform-canvas,#efeee8);overflow:hidden}
 .platform-art-top{display:flex;justify-content:space-between;position:relative;z-index:1;padding:24px 28px 0;font-size:8px;letter-spacing:1.4px;color:#687376}
+.platform .platform-art-top{color:var(--platform-accent)}
+.platform .external-link{color:var(--platform-accent)}
+.platform .external-link:hover{text-decoration:underline;text-underline-offset:4px}
+.platform .feature-list li::before{background:var(--platform-accent)}
+.platform .platform-bottom{border-top-color:var(--platform-border)}
 .platform-art img{width:100%;height:auto;aspect-ratio:1000/650;object-fit:contain}
 .illustration-note{position:absolute;bottom:12px;right:20px;font-size:8px;letter-spacing:.2px;color:#748087}
 .platform-content{padding:30px 31px 28px;display:flex;flex-direction:column;flex:1}
