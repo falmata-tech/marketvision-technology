@@ -8,11 +8,7 @@ import json,re
 
 ROOT=Path(__file__).resolve().parents[1]
 LANGUAGES={'en':('English','en_US'),'am':('አማርኛ','am_ET'),'om':('Afaan Oromoo','om_ET'),'so':('Soomaali','so_ET')}
-VERSION='20261029-company-portfolio'
-
-
-def page_path(lang, page='home'):
-    return ('' if lang=='en' else lang+'/')+('' if page=='home' else page+'/')
+VERSION='20261028-concise-portfolio'
 
 
 def fragment(parent, value):
@@ -34,7 +30,7 @@ def local_link(path, prefix):
     return prefix+path.removeprefix('./')
 
 
-def language_switcher(lang,copy,prefix,page):
+def language_switcher(lang,copy,prefix):
     switch=html.fragment_fromstring('''<details class="language-switcher" data-language-switcher>
       <summary><svg class="language-globe" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg><span class="language-current"></span><svg class="language-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
       <div class="language-options"></div>
@@ -45,7 +41,7 @@ def language_switcher(lang,copy,prefix,page):
     summary.find('span').set('lang',lang)
     options=switch.find('div');options.set('aria-label',copy['language.label'])
     for code,(name,_) in LANGUAGES.items():
-        a=etree.SubElement(options,'a',href=prefix+page_path(code,page),lang=code,hreflang=code)
+        a=etree.SubElement(options,'a',href=prefix+('' if code=='en' else code+'/'),lang=code,hreflang=code)
         a.set('data-language-link',code)
         if code==lang:a.set('aria-current','page')
         label=etree.SubElement(a,'span');label.text=name
@@ -54,7 +50,7 @@ def language_switcher(lang,copy,prefix,page):
     return switch
 
 
-def build(lang,catalog,english,source,page='home'):
+def build(lang,catalog,english,source):
     if set(catalog)!=set(english):
         raise ValueError(f'{lang}: missing {set(english)-set(catalog)}, unexpected {set(catalog)-set(english)}')
     if any(not isinstance(v,str) or not v.strip() for v in catalog.values()):raise ValueError(f'{lang}: empty translation')
@@ -71,19 +67,11 @@ def build(lang,catalog,english,source,page='home'):
             else:el.set(kind,value)
             del el.attrib[attr]
     # Every localized URL is a complete static document; assets remain shared.
-    relative_page=page_path(lang,page)
-    prefix='../'*relative_page.count('/') or './'
+    prefix='./' if lang=='en' else '../'
     for el in doc.iter():
         if not isinstance(el.tag,str):continue
         for attr in ('src','href'):
             if el.get(attr):el.set(attr,local_link(el.get(attr),prefix))
-        if el.get('data-site-link'):
-            route,_,section=el.attrib.pop('data-site-link').partition('#')
-            if route not in {'home','company'}:raise ValueError(f'Unknown page route: {route}')
-            target=page_path(lang,route)
-            href=('#'+section if section else './') if route==page else prefix+target+('#'+section if section else '')
-            el.set('href',href)
-            if route==page and not section:el.set('aria-current','page')
     # CargoChatter uses a language query parameter on its shared homepage.
     if lang!='en':
         for link in doc.xpath('//a[@href]'):
@@ -92,16 +80,16 @@ def build(lang,catalog,english,source,page='home'):
     head=doc.find('head')
     canonical=head.xpath('link[@rel="canonical"]')[0]
     origin=canonical.get('href').rstrip('/')+'/'
-    page_url=origin+relative_page
+    page_url=origin+('' if lang=='en' else lang+'/')
     canonical.set('href',page_url)
     head.xpath('meta[@property="og:url"]')[0].set('content',page_url)
     og_locale=head.xpath('meta[@property="og:locale"]')
     if og_locale:og_locale[0].set('content',LANGUAGES[lang][1])
     else:etree.SubElement(head,'meta',property='og:locale',content=LANGUAGES[lang][1])
     for code,(_,og) in LANGUAGES.items():
-        etree.SubElement(head,'link',rel='alternate',hreflang=code,href=origin+page_path(code,page))
+        etree.SubElement(head,'link',rel='alternate',hreflang=code,href=origin+('' if code=='en' else code+'/'))
         if code!=lang:etree.SubElement(head,'meta',property='og:locale:alternate',content=og)
-    etree.SubElement(head,'link',rel='alternate',hreflang='x-default',href=origin+page_path('en',page))
+    etree.SubElement(head,'link',rel='alternate',hreflang='x-default',href=origin)
     for el in head.xpath('link[@rel="stylesheet"]|script[@src]'):
         attr='href' if el.tag=='link' else 'src'
         path=el.get(attr)
@@ -117,7 +105,7 @@ def build(lang,catalog,english,source,page='home'):
     header=doc.xpath('//div[contains(concat(" ",normalize-space(@class)," ")," header-inner ")]')[0]
     toggle=header.xpath('./button')[0]
     header.remove(toggle)
-    header.append(language_switcher(lang,catalog,prefix,page))
+    header.append(language_switcher(lang,catalog,prefix))
     header.append(toggle)
     # Normalize source brand types to retain the approved Latin lettering.
     for el in doc.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," brand-type ") or contains(concat(" ",normalize-space(@class)," ")," footer-wordmark ")]'):
@@ -128,7 +116,7 @@ def build(lang,catalog,english,source,page='home'):
     for el in doc.xpath('//svg[contains(@class,"platform-illustration")]//text'):
         el.set('font-family','inherit')
         if lang=='am':el.set('letter-spacing','0')
-    destination=ROOT/relative_page/'index.html'
+    destination=ROOT/('index.html' if lang=='en' else lang+'/index.html')
     destination.parent.mkdir(parents=True,exist_ok=True)
     destination.write_text('<!doctype html>\n'+etree.tostring(doc,encoding='unicode',method='html')+'\n',encoding='utf-8')
     return page_url
@@ -171,43 +159,22 @@ def page_source():
     return source
 
 
-def company_source(home_source):
-    source=deepcopy(home_source)
-    body=source.find('body')
-    body.set('class','company-page')
-    main=body.find('main')
-    company=html.fragment_fromstring((ROOT/'company-template.html').read_text(encoding='utf-8'))
-    if company.tag!='main':raise ValueError('Company template must contain one main element')
-    body.replace(main,company)
-    for el in source.xpath('//*[@data-i18n-html="heading.001"]'):
-        el.set('data-i18n-html','company.metaTitle')
-    for el in source.xpath('//*[@data-i18n-content="heading.001"]'):
-        el.set('data-i18n-content','company.metaTitle')
-    for el in source.xpath('//*[@data-i18n-content="meta.001"]'):
-        el.set('data-i18n-content','company.metaDescription')
-    return source
-
-
 def main():
     source=page_source()
     english=json.loads((ROOT/'locales/en.json').read_text(encoding='utf-8'))
-    urls_by_page={}
-    for page,template in {'home':source,'company':company_source(source)}.items():
-        urls=[]
-        for lang in LANGUAGES:
-            path=ROOT/'locales'/f'{lang}.json'
-            if not path.exists():raise SystemExit(f'Missing {path}; translations must be complete before building.')
-            urls.append(build(lang,json.loads(path.read_text(encoding='utf-8')),english,template,page))
-        urls_by_page[page]=urls
+    urls=[]
+    for lang in LANGUAGES:
+        path=ROOT/'locales'/f'{lang}.json'
+        if not path.exists():raise SystemExit(f'Missing {path}; translations must be complete before building.')
+        urls.append(build(lang,json.loads(path.read_text(encoding='utf-8')),english,source))
     NS='http://www.sitemaps.org/schemas/sitemap/0.9';XHTML='http://www.w3.org/1999/xhtml'
     sitemap=etree.Element('{'+NS+'}urlset',nsmap={None:NS,'xhtml':XHTML})
-    for urls in urls_by_page.values():
-        for url in urls:
-            entry=etree.SubElement(sitemap,'{'+NS+'}url');etree.SubElement(entry,'{'+NS+'}loc').text=url
-            for code,href in zip(LANGUAGES,urls):etree.SubElement(entry,'{'+XHTML+'}link',rel='alternate',hreflang=code,href=href)
-            etree.SubElement(entry,'{'+XHTML+'}link',rel='alternate',hreflang='x-default',href=urls[0])
+    for url in urls:
+        entry=etree.SubElement(sitemap,'{'+NS+'}url');etree.SubElement(entry,'{'+NS+'}loc').text=url
+        for code,href in zip(LANGUAGES,urls):etree.SubElement(entry,'{'+XHTML+'}link',rel='alternate',hreflang=code,href=href)
+        etree.SubElement(entry,'{'+XHTML+'}link',rel='alternate',hreflang='x-default',href=urls[0])
     (ROOT/'sitemap.xml').write_bytes(etree.tostring(sitemap,xml_declaration=True,encoding='UTF-8',pretty_print=True))
     build_error(source)
-    print(f'Built {len(urls_by_page)*len(LANGUAGES)} pages in {len(LANGUAGES)} languages with {len(english)} complete strings each.')
+    print(f'Built {len(urls)} languages with {len(english)} complete strings each.')
 
 if __name__=='__main__':main()

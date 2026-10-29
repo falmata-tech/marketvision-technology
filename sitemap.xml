@@ -32,36 +32,4 @@
     <xhtml:link rel="alternate" hreflang="so" href="https://marketvisiontech.com/so/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://marketvisiontech.com/"/>
   </url>
-  <url>
-    <loc>https://marketvisiontech.com/company/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marketvisiontech.com/company/"/>
-    <xhtml:link rel="alternate" hreflang="am" href="https://marketvisiontech.com/am/company/"/>
-    <xhtml:link rel="alternate" hreflang="om" href="https://marketvisiontech.com/om/company/"/>
-    <xhtml:link rel="alternate" hreflang="so" href="https://marketvisiontech.com/so/company/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marketvisiontech.com/company/"/>
-  </url>
-  <url>
-    <loc>https://marketvisiontech.com/am/company/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marketvisiontech.com/company/"/>
-    <xhtml:link rel="alternate" hreflang="am" href="https://marketvisiontech.com/am/company/"/>
-    <xhtml:link rel="alternate" hreflang="om" href="https://marketvisiontech.com/om/company/"/>
-    <xhtml:link rel="alternate" hreflang="so" href="https://marketvisiontech.com/so/company/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marketvisiontech.com/company/"/>
-  </url>
-  <url>
-    <loc>https://marketvisiontech.com/om/company/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marketvisiontech.com/company/"/>
-    <xhtml:link rel="alternate" hreflang="am" href="https://marketvisiontech.com/am/company/"/>
-    <xhtml:link rel="alternate" hreflang="om" href="https://marketvisiontech.com/om/company/"/>
-    <xhtml:link rel="alternate" hreflang="so" href="https://marketvisiontech.com/so/company/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marketvisiontech.com/company/"/>
-  </url>
-  <url>
-    <loc>https://marketvisiontech.com/so/company/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marketvisiontech.com/company/"/>
-    <xhtml:link rel="alternate" hreflang="am" href="https://marketvisiontech.com/am/company/"/>
-    <xhtml:link rel="alternate" hreflang="om" href="https://marketvisiontech.com/om/company/"/>
-    <xhtml:link rel="alternate" hreflang="so" href="https://marketvisiontech.com/so/company/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marketvisiontech.com/company/"/>
-  </url>
 </urlset>
