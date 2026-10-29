@@ -58,7 +58,7 @@ html:is([lang="om"],[lang="so"]) .hero h1 { font-size: clamp(51px,5.3vw,78px); l
 html:not([lang="en"]) .platform-title { flex-direction: column; align-items: flex-start; }
 html:not([lang="en"]) .platform-content > p { font-size: 14px; }
 html:not([lang="en"]) .platform-art-top { gap: 12px; line-height: 1.5; }
-html:not([lang="en"]) .feature-list li { font-size: 10px; line-height: 1.6; }
+html:not([lang="en"]) .feature-list li { font-size: 11px; line-height: 1.6; }
 html[lang="am"] .contact-field :is(input,select,textarea) { font-family: Inter,"Noto Sans Ethiopic",sans-serif; }
 @media (max-width: 1180px) {
   .site-header { height: 84px; }
