@@ -4,6 +4,14 @@
   const text = locale.text;
   const toggle = document.getElementById('menu-toggle');
   const navigation = document.getElementById('primary-nav');
+  // Keep links to the former homepage company sections useful.
+  if (!document.body.classList.contains('company-page') && ['#company', '#vision', '#perspective'].includes(window.location.hash)) {
+    const companyPage = navigation && navigation.querySelector('a[href*="company/"]');
+    if (companyPage) {
+      window.location.replace(companyPage.href);
+      return;
+    }
+  }
   function closeMenu(returnFocus) {
     if (!toggle || !navigation) return;
     toggle.setAttribute('aria-expanded', 'false');
